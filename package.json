@@ -1,9 +1,9 @@
 {
   "name": "ngx-hammer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hammer.js wrapper for Angular4+ to support some operation in the mobile",
   "author": "bsdfzzzy@gmail.com",
-  "main": "projects/hammer/src/public_api.ts",
+  "main": "exports/bundles/ngx-hammer.umd.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --port 4199",

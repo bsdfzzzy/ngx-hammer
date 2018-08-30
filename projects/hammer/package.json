@@ -1,6 +1,8 @@
 {
   "name": "ngx-hammer",
   "version": "1.0.0",
+  "description": "Hammer.js wrapper for Angular4+ to support some operation in the mobile",
+  "author": "bsdfzzzy@gmail.com",
   "license": "MIT",
   "private": false,
   "repository": {
@@ -14,10 +16,8 @@
     "@angular/platform-browser": "^6.1.0",
     "hammerjs": "^2.0.8"
   },
-  "description": "> Angular HammerJS Wrapper",
   "bugs": {
     "url": "https://github.com/bsdfzzzy/ngx-hammer/issues"
   },
   "homepage": "https://github.com/bsdfzzzy/ngx-hammer#readme",
-  "author": ""
 }

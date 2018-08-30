@@ -1,6 +1,8 @@
 {
   "name": "ngx-hammer",
   "version": "1.0.0",
+  "description": "Hammer.js wrapper for Angular4+ to support some operation in the mobile",
+  "author": "bsdfzzzy@gmail.com",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --port 4199",
@@ -10,7 +12,6 @@
     "e2e": "ng e2e",
     "build:lib": "ng build --prod ngx-hammer"
   },
-  "private": true,
   "dependencies": {
     "@angular-devkit/build-ng-packagr": "^0.7.5",
     "@angular/animations": "^6.1.0",

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-hammer-app": {
+    "ngx-hammer": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -120,7 +120,7 @@
         }
       }
     },
-    "ngx-hammer": {
+    "ngx-hammer-lib": {
       "root": "src/app/hammer",
       "sourceRoot": "src/app/hammer",
       "projectType": "library",

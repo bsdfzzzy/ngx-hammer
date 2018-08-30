@@ -5,7 +5,9 @@ import {
   ElementRef,
   OnChanges,
   SimpleChanges,
-  OnDestroy
+  OnDestroy,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { NgHammerConfig } from './model';
 
@@ -26,6 +28,9 @@ const directions = [
 export class HammerDirective implements OnChanges, OnDestroy {
   @Input()
   ngHammer: NgHammerConfig;
+
+  @Output()
+  eventTriggered = new EventEmitter();
 
   elementInstance: any;
 
@@ -83,16 +88,11 @@ export class HammerDirective implements OnChanges, OnDestroy {
       this.ngHammer.direction
     );
 
-    if (typeof this.ngHammer.handler !== 'function') {
-      mc.handler = null;
-      console.warn(
-        '[ngx-hammer] invalid handler function for v-hammer: ' +
-          this.ngHammer.handler
-      );
-    } else {
-      mc.on(event, (mc.handler = this.ngHammer.handler));
-    }
-    console.log();
+    mc.on(event, (mc.handler = this.trigger.bind(this)));
+  }
+
+  private trigger(e) {
+    this.eventTriggered.emit(e);
   }
 
   private capitalize(str: string) {

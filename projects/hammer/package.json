@@ -7,9 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/bsdfzzzy/ngx-hammer.git"
   },
-  "dependencies": {
-    "tslib": "^1.9.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@angular/common": "^6.1.0",
     "@angular/core": "^6.1.0",
@@ -21,15 +19,5 @@
     "url": "https://github.com/bsdfzzzy/ngx-hammer/issues"
   },
   "homepage": "https://github.com/bsdfzzzy/ngx-hammer#readme",
-  "author": "bsdfzzzy@gmail.com",
-  "main": "bundles/ngx-hammer.umd.js",
-  "module": "fesm5/ngx-hammer.js",
-  "es2015": "fesm2015/ngx-hammer.js",
-  "esm5": "esm5/ngx-hammer.js",
-  "esm2015": "esm2015/ngx-hammer.js",
-  "fesm5": "fesm5/ngx-hammer.js",
-  "fesm2015": "fesm2015/ngx-hammer.js",
-  "typings": "ngx-hammer.d.ts",
-  "metadata": "ngx-hammer.metadata.json",
-  "sideEffects": false
+  "author": "bsdfzzzy@gmail.com"
 }

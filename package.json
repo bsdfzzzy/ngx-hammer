@@ -1,6 +1,6 @@
 {
   "name": "ngx-hammer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Hammer.js wrapper for Angular4+ to support some operation in the mobile",
   "author": "bsdfzzzy@gmail.com",
   "main": "exports/hammer/bundles/ngx-hammer.umd.js",
@@ -11,10 +11,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng build --prod ngx-hammer"
+    "build:lib": "ng build --prod ngx-hammer-lib"
   },
   "dependencies": {
-    "@angular-devkit/build-ng-packagr": "^0.7.5",
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
@@ -31,6 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.7.5",
+    "@angular-devkit/build-ng-packagr": "^0.7.5",
     "@angular/cli": "~6.1.3",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",

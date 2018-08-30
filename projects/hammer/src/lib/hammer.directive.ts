@@ -7,6 +7,7 @@ import {
   SimpleChanges,
   OnDestroy
 } from '@angular/core';
+import { NgHammerConfig } from './model';
 
 const gestures = ['tap', 'pan', 'pinch', 'press', 'rotate', 'swipe'];
 const directions = [
@@ -18,12 +19,6 @@ const directions = [
   'vertical',
   'all'
 ];
-
-declare interface NgHammerConfig {
-  event: string;
-  direction: string;
-  handler: Function;
-}
 
 @Directive({
   selector: '[ngHammer]'

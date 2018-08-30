@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-hammer": {
+    "ngx-hammer-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -29,12 +29,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -115,6 +113,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-hammer": {
+      "root": "src/app/hammer",
+      "sourceRoot": "src/app/hammer",
+      "projectType": "library",
+      "prefix": "ng",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/hammer/tsconfig.lib.json",
+            "project": "projects/hammer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/hammer/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hammer/src/test.ts",
+            "tsConfig": "projects/hammer/tsconfig.spec.json",
+            "karmaConfig": "projects/hammer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/hammer/tsconfig.lib.json",
+              "projects/hammer/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

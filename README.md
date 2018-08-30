@@ -1,27 +1,67 @@
-# NgxHammer
+# ngx-hammer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
+Hammer.js wrapper for Angular4+ to support some operation in the mobile
 
-## Development server
+This is a directive wrapper for Hammer.js 2.x.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+If you want to find a same wrapper for VueJS, you can have a look at [vue2-hammer](https://github.com/bsdfzzzy/vue2-hammer)
 
-## Code scaffolding
+## Install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### npm/yarn
 
-## Build
+Available through npm/yarn as `ngx-hammer`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+npm install -S ngx-hammer
+```
 
-## Running unit tests
+or
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+yarn add ngx-hammer
+```
 
-## Running end-to-end tests
+In a module
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```typescript
+import { HammerModule } from 'ngx-hammer'
 
-## Further help
+...
+imports: [
+  ...,
+  HammerModule
+]
+...
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Usage
+
+#### Using the `ngHammer` directive
+
+```html
+<a ngHammer="{event: 'tap', handler: onTap}">Tap me!</a>
+
+<div ngHammer="{event: 'swipe', direction: 'horizontal', handler: onSwipe}">Swipe me!</div>
+```
+
+See [Hammer.js documentation](http://hammerjs.github.io/getting-started/) for all available events.
+
+### Supported gestures and directions
+
+#### gestures
+
+tap, pan, pinch, press, rotate, swipe
+
+#### directions
+
+up, down, left, right, horizontal, vertical, all
+
+## Run the Example
+
+- Run `yarn` or `npm i`
+- See localhost:4199
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)

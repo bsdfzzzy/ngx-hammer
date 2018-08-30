@@ -1,6 +1,6 @@
-import { HammerDirective } from './hammer.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HammerDirective } from './hammer.directive';
 
 @NgModule({
   imports: [CommonModule],

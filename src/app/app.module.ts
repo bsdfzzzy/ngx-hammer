@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HammerModule } from './hammer/hammer.module';
+import { HammerModule } from '../../projects/hammer/src/public_api';
 
 @NgModule({
   declarations: [AppComponent],

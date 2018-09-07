@@ -121,8 +121,8 @@
       }
     },
     "ngx-hammer": {
-      "root": "src/app/ngx-hammer",
-      "sourceRoot": "src/app/ngx-hammer",
+      "root": "projects/ngx-hammer",
+      "sourceRoot": "projects/ngx-hammer/src",
       "projectType": "library",
       "prefix": "ng",
       "architect": {

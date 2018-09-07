@@ -1,6 +1,6 @@
 {
   "name": "ngx-hammer",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Hammer.js wrapper for Angular4+ to support some operation in the mobile",
   "angular-cli": {},
   "author": "bsdfzzzy@gmail.com",
@@ -11,7 +11,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng build --prod ngx-hammer"
+    "build:lib": "ng build --prod ngx-hammer",
+    "npm:pack": "cd dist/ngx-hammer && npm pack",
+    "package": "npm run build:lib && npm run npm:pack"
   },
   "dependencies": {
     "@angular/animations": "^6.1.0",

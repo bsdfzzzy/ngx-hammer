@@ -11,7 +11,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:lib": "ng build --prod ngx-hammer-lib"
+    "build:lib": "ng build --prod ngx-hammer"
   },
   "dependencies": {
     "@angular/animations": "^6.1.0",

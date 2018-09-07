@@ -1,8 +1,9 @@
 {
   "name": "ngx-hammer",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Hammer.js wrapper for Angular4+ to support some operation in the mobile",
   "angular-cli": {},
+  "main": "dist/ngx-hammer/bundles/ngx-hammer.umd.js",
   "author": "bsdfzzzy@gmail.com",
   "scripts": {
     "ng": "ng",

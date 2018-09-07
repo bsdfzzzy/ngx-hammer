@@ -13,6 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:lib": "ng build --prod ngx-hammer",
+    "npm:publish": "rm -rf ./dist && npm run build:lib",
     "npm:pack": "cd dist/ngx-hammer && npm pack",
     "package": "npm run build:lib && npm run npm:pack"
   },

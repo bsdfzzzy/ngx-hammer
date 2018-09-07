@@ -14,7 +14,7 @@
     "e2e": "ng e2e",
     "build:lib": "ng build --prod ngx-hammer",
     "npm:pack": "cd dist/ngx-hammer && npm pack",
-    "prepare": "npm run build:lib && npm run npm:pack"
+    "package": "npm run build:lib && npm run npm:pack"
   },
   "private": false,
   "repository": {

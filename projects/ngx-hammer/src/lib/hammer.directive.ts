@@ -11,7 +11,17 @@ import {
 } from '@angular/core';
 import { NgHammerConfig } from './model';
 
-const gestures = ['tap', 'pan', 'pinch', 'press', 'rotate', 'swipe'];
+const recognizers = ['tap', 'pan', 'pinch', 'press', 'rotate', 'swipe'];
+const gestures = [
+  'tap',
+  'pan',
+  'pinch',
+  'press',
+  'rotate',
+  'swipe',
+  'panstart',
+  'panend'
+];
 const directions = [
   'up',
   'down',
@@ -73,15 +83,20 @@ export class HammerDirective implements OnChanges, OnDestroy {
 
     if (typeof event === 'string') {
       this.listenToEvent(mc, event);
+      mc.on(event, (mc.handler = this.trigger.bind(this)));
     } else if (event instanceof Array) {
       event.forEach(eventName => this.listenToEvent(mc, eventName));
+      mc.on(event.join(' '), (mc.handler = this.trigger.bind(this)));
     }
   }
 
   private listenToEvent(mc: Hammer, event: string) {
-    let recognizer, recognizerType;
-    recognizerType = gestures.find(gesture => gesture === event);
-    if (!recognizerType) {
+    let recognizer, recognizerType, gestureType;
+    gestureType = gestures.find(gesture => gesture === event);
+    recognizerType = recognizers.find(recognizer_ => recognizer_ === event);
+    if (!recognizerType && gestureType) {
+      return;
+    } else if (!recognizerType && !gestureType) {
       console.warn('[ngx-hammer] invalid event type: ' + event);
       return;
     }
@@ -95,8 +110,6 @@ export class HammerDirective implements OnChanges, OnDestroy {
     recognizer.options.direction = this.guardDirections(
       this.ngHammer.direction
     );
-
-    mc.on(event, (mc.handler = this.trigger.bind(this)));
   }
 
   private trigger(e) {

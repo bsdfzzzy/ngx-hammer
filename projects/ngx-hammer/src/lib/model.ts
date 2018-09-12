@@ -1,5 +1,5 @@
 export interface NgHammerConfig {
-  event: string;
+  event: Array<string> | string;
   direction: string;
   handler: Function;
 }

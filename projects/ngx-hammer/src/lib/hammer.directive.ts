@@ -66,11 +66,19 @@ export class HammerDirective implements OnChanges, OnDestroy {
 
     // determine event type
     const event = this.ngHammer.event;
-    if (!event) {
+    if (!event || event.length === 0) {
       console.warn('[ngx-hammer] event type argument is required.');
       return;
     }
 
+    if (typeof event === 'string') {
+      this.listenToEvent(mc, event);
+    } else if (event instanceof Array) {
+      event.forEach(eventName => this.listenToEvent(mc, eventName));
+    }
+  }
+
+  private listenToEvent(mc: Hammer, event: string) {
     let recognizer, recognizerType;
     recognizerType = gestures.find(gesture => gesture === event);
     if (!recognizerType) {

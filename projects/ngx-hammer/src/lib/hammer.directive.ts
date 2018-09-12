@@ -67,7 +67,7 @@ export class HammerDirective implements OnChanges, OnDestroy {
   createHammerManager() {
     this.elementInstance = this.el.nativeElement;
     if (!this.elementInstance.hammer) {
-      this.elementInstance.hammer = new Hammer.Manager(this.elementInstance);
+      this.elementInstance.hammer = new Hammer(this.elementInstance);
     }
   }
 
@@ -107,9 +107,9 @@ export class HammerDirective implements OnChanges, OnDestroy {
       mc.add(recognizer);
     }
 
-    recognizer.options.direction = this.guardDirections(
-      this.ngHammer.direction
-    );
+    recognizer.set({
+      direction: this.guardDirections(this.ngHammer.direction)
+    });
   }
 
   private trigger(e) {

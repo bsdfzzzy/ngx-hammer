@@ -56,7 +56,7 @@ export class HammerDirective implements OnChanges, OnDestroy {
   ngOnDestroy() {
     let mc: Hammer = this.elementInstance.hammer;
     if (mc.handler) {
-      mc.hammer.off(this.ngHammer.event, mc.handler);
+      mc.off(this.ngHammer.event, mc.handler);
     }
     if (!Object.keys(mc.handlers).length) {
       mc.destroy();

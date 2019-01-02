@@ -40,9 +40,9 @@ imports: [
 #### Using the `ngHammer` directive
 
 ```html
-<a ngHammer="{event: 'tap'}" (eventTraggered)="onTap()">Tap me!</a>
+<a ngHammer="{event: 'tap'}" (eventTriggered)="onTap()">Tap me!</a>
 
-<div ngHammer="{event: 'swipe', direction: 'horizontal'}" (eventTraggered)="onSwipe()">Swipe me!</div>
+<div ngHammer="{event: 'swipe', direction: 'horizontal'}" (eventTriggered)="onSwipe()">Swipe me!</div>
 ```
 
 See [Hammer.js documentation](http://hammerjs.github.io/getting-started/) for all available events.
